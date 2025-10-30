@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Box, Toolbar } from "@mui/material";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";

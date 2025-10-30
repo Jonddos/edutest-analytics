@@ -26,15 +26,15 @@ export default function Sidebar() {
         >
             <Toolbar />
             <List>
-                <ListItem button component={Link} to="/">
+                <ListItem component={Link} to="/">
                     <ListItemIcon><Home color="primary" /></ListItemIcon>
                     <ListItemText primary="Inicio" />
                 </ListItem>
-                <ListItem button component={Link} to="/evaluation">
+                <ListItem component={Link} to="/evaluation">
                     <ListItemIcon><School color="primary" /></ListItemIcon>
                     <ListItemText primary="Evaluaciones" />
                 </ListItem>
-                <ListItem button component={Link} to="/analytics">
+                <ListItem component={Link} to="/analytics">
                     <ListItemIcon><BarChart color="primary" /></ListItemIcon>
                     <ListItemText primary="Analítica" />
                 </ListItem>
