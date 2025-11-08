@@ -32,11 +32,18 @@ export default function Login() {
             const res = await api.post("/auth/login", form);
             const token = res.data.access_token;
 
-            localStorage.setItem("token", token);
+            // ✅ Guarda token con nombre coherente
+            localStorage.setItem("authToken", token);
             localStorage.setItem("role", res.data.role);
 
-            toast.success(`Inicio de sesión exitoso como ${res.data.role === "teacher" ? "docente" : "usuario"} 🎉`);
-            setTimeout(() => navigate("/"), 1200);
+            toast.success(
+                `Inicio de sesión exitoso como ${
+                    res.data.role === "teacher" ? "docente" : "usuario"
+                } 🎉`
+            );
+
+            // ✅ Redirige directo a home y bloquea "atrás"
+            setTimeout(() => navigate("/home", { replace: true }), 1200);
         } catch (err: any) {
             if (err.response?.data?.detail) {
                 toast.error(err.response.data.detail);
