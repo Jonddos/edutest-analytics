@@ -16,7 +16,9 @@ export default function Navbar({ toggleColorMode, mode }: NavbarProps) {
                 <Button
                     color="inherit"
                     onClick={() => {
-                        localStorage.removeItem("token");
+                        localStorage.removeItem("authToken");
+                        localStorage.removeItem("role");
+
                         window.location.href = "/login";
                     }}
                 >

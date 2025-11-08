@@ -6,6 +6,14 @@ interface ProtectedRouteProps {
 }
 
 export default function ProtectedRoute({ children }: ProtectedRouteProps) {
-    const token = localStorage.getItem("token");
-    return token ? children : <Navigate to="/login" />;
+    // ⚙️ Lee directamente del localStorage, sin useState ni useEffect
+    const token = localStorage.getItem("authToken");
+
+    // 🔒 Si no hay token, redirige al login
+    if (!token) {
+        return <Navigate to="/login" replace />;
+    }
+
+    // ✅ Si hay token, renderiza el contenido protegido
+    return children;
 }
