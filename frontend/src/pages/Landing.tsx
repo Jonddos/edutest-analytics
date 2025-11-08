@@ -3,7 +3,6 @@ import {
     Button,
     Container,
     Typography,
-    Grid,
     Paper,
     Dialog,
     DialogTitle,
@@ -11,6 +10,7 @@ import {
     DialogContentText,
     DialogActions,
 } from "@mui/material";
+import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -116,7 +116,7 @@ export default function Landing() {
 
                     <Grid container spacing={3}>
                         {/* ISO/IEC 25010 */}
-                        <Grid item xs={12} md={4}>
+                        <Grid component="div">
                             <Paper
                                 sx={{
                                     p: 3,
@@ -145,7 +145,7 @@ export default function Landing() {
                         </Grid>
 
                         {/* ISO/IEC 12207 */}
-                        <Grid item xs={12} md={4}>
+                        <Grid component="div">
                             <Paper
                                 sx={{
                                     p: 3,
@@ -173,8 +173,7 @@ export default function Landing() {
                             </Paper>
                         </Grid>
 
-                        {/* Mejora Continua */}
-                        <Grid item xs={12} md={4}>
+                        <Grid component="div">
                             <Paper
                                 sx={{
                                     p: 3,
