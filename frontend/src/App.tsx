@@ -8,6 +8,7 @@ import TakeEvaluation from "./pages/TakeEvaluation";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardLayout from "./components/DashboardLayout";
 import Analytics from "./pages/Analytics";
+import Landing from "./pages/Landing.tsx";
 
 interface AppProps {
     mode: "light" | "dark";
@@ -20,6 +21,7 @@ export default function App({ mode, toggleColorMode }: AppProps) {
         <BrowserRouter>
             <Routes>
                 {/* 🔓 Rutas públicas */}
+                <Route path="/" element={<Landing />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
 
@@ -28,7 +30,7 @@ export default function App({ mode, toggleColorMode }: AppProps) {
 
                 {/* 🔒 Rutas protegidas para docentes */}
                 <Route
-                    path="/"
+                    path="/home"
                     element={
                         <ProtectedRoute>
                             <DashboardLayout mode={mode} toggleColorMode={toggleColorMode}>

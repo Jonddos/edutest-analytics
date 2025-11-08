@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 🎓 EduTest Analytics – Frontend (React + Material UI)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Autor:** Jonathan Ortiz Ruiz  
+**Deploy:** [https://edutest-front.onrender.com](https://edutest-front.onrender.com)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📘 Descripción
 
-## React Compiler
+Interfaz web para la plataforma **EduTest Analytics**, enfocada en la gestión de evaluaciones académicas, registro de estudiantes, aplicación de pruebas y visualización de métricas de rendimiento.  
+Desarrollado con **React**, **Vite** y **Material UI**, el proyecto aplica principios de usabilidad y accesibilidad basados en la norma **ISO/IEC 25010**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Tecnologías Principales
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Componente | Tecnología |
+|-------------|-------------|
+| Framework | React 18 + Vite |
+| UI Library | Material UI (MUI) |
+| Estado Global | React Hooks |
+| Enrutamiento | React Router DOM |
+| Cliente API | Axios |
+| Estilo | Tailwind + MUI |
+| Despliegue | Render.com |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📂 Estructura del Proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+frontend/
+│── src/
+│   ├── api/axiosClient.ts       # Configuración de Axios
+│   ├── components/              # Componentes reutilizables (Navbar, Layouts)
+│   ├── pages/                   # Páginas principales (Login, Home, Analytics)
+│   ├── hooks/                   # Hooks personalizados
+│   └── main.tsx                 # Punto de entrada
+│── public/
+│── package.json
+│── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Ejecución Local
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Instala dependencias:
+   ```bash
+   npm install
+   ```
+
+2. Crea un archivo `.env` con la URL del backend:
+   ```
+   VITE_API_URL=https://edutest-backend-q6nh.onrender.com
+   ```
+
+3. Ejecuta el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+4. Abre el navegador en:
+   👉 [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🧾 Licencia
+
+MIT © 2025 — Jonathan Ortiz Ruiz
